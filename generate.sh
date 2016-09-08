@@ -1,6 +1,9 @@
 #!/bin/sh
 
 VERSION=$1
-ID=`docker build .`
-docker run --name fusermount-build -it $ID $VERSION
+
+docker build -t fusermount-$VERSION .
+docker run --name fusermount-build -it fusermount-$VERSION $VERSION
 docker cp fusermount-build:/tmp/fuse-$VERSION/util/fusermount ./
+docker rm fusermount-build
+
