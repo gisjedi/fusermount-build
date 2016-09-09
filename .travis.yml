@@ -1,0 +1,12 @@
+sudo: required
+services:
+- docker
+script:
+- sh generate.sh 2.9.7
+deploy:
+  provider: releases
+  api_key:
+    secure: rPk1nORTI2WBjMIiCk+OervK//57d38fXt8+9/C64ApUV+zl/3yOfNbiIktQb8vy+HSwoAAPaamYZlwcL7NN0eV1aZcrD1JJVIHUn+c+lryqR25I75svKiXDvQ+w6rAc4AHzk12Y2wjNgCQqxTfOPd7zHjbHFjmvxVyk4XPQ+R3adkMa1KBRfbU2IYYfPDoIeKtsPA30CG7FZwHlf3wFcxtWzeA8ztbb+IVbsrpcXP7RCPJU09KJ4mX+Yct4lNq4VAgHp9cPk0LIuhmF4tMNezwe9pzt87+GQY80z7K/5sWiIh9Vs2d6c9/iK8KN8F3BlV+AbWyk57fadMKrGNeznFSspQMgc1WavQz3JGbiAojYvTkcGoU+cdsVjLIDftHNVcdH2JaLkb/DbMeDYcvaWingOPS5Jn+lXskbGPOtQiwgcxY+q5HeE8nVGLX4MmxK+1tXZ/kt04wTRUP2K4L3l+38mbYUPU6elCxxhIiElPvIqsRFvWk3F3ANzbnlO09bQkga8yHyyl+Xb4TAraDHfb2TIefLNN2t7/N5/XEJoMZYjnFjNOlBVYOGHRWjBqYthUDn/h8keLkrXHyfnILSbC8Cv+vb6JTEq/P7ovWnkeuGIfh1DpmzhIOhUXA0mAntHAVNAnFb34wOqH8iQeR4M1knJc+SQpldBMwscVWjPwI=
+  file: fusermount
+  on:
+    repo: gisjedi/fusermount-build
